@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="description" content="Jody Heavener is trying to make good web things.">
+
+    <title>Jody Heavener</title>
+
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <link href="http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic" rel="stylesheet" type="text/css">
+
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-size: 17px;
+        font-family: 'Playfair Display', serif;
+        color: red;
+      }
+
+      .container {
+        position: relative;
+        padding: 20px 30px;
+      }
+
+      @media (min-width: 640px) {
+        .container {
+          padding: 40px 60px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      #who-the-fuck-are-you {
+        font-weight: 400;
+        font-size: 50px;
+        margin: 0;
+        margin-bottom: 15px;
+      }
+
+      #tell-them-what-youdo {
+        font-size: 25px;
+      }
+
+      a {
+        position: relative;
+        color: #fff;
+        background-color: red;
+        border-radius: 1px;
+        padding: 7px 10px;
+        text-decoration: none;
+        transition: all 1s ease-in;
+      }
+
+      a:hover,
+      a:focus {
+        position: relative;
+        z-index: 1;
+        outline: none;
+        text-shadow: 0 0 transparent;
+        box-shadow: 0 0 0 5px greenyellow;
+        background-color: greenyellow;
+        color: black;
+      }
+
+      p {
+        margin: 8px 0;
+        line-height: 30px;
+      }
+
+      .section {
+        margin: 30px 0;
+        max-width: 650px;
+      }
+
+      #works {
+        border-top: 1px solid rgba(255, 0, 0, 0.1);
+        padding-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <h1 id="who-the-fuck-are-you">Jody Heavener</h1>
+      <p id="tell-them-what-youdo">Trying to make good web things.</p>
+
+      <div class="section">
+        <p>I work as a full stack web developer in Edmonton, Canada.</p>
+        <p>I've got a cool gig building <a href="https://www.designernews.co/" title="Designer News is news for designers.">Designer News</a>, and am always excited to work on fun projects. I'm mostly on <a href="https://twitter.com/jodyheavener">Twitter</a> and <a href="https://github.com/jodyheavener">Github</a>. You can reach me over <a href="mailto:j.heavener@gmail.com">email</a>.</p>
+      </div>
+
+      <div class="section" id="works">
+        <p>Previous work includes <a href="http://www.r2s.co/">Rdio2Spotify</a>, <a href="http://www.quicknote.io/">QuickNote</a>, <a href="http://usedelight.com/">Delight</a>, <a href="https://www.pixelunion.net/">Pixel Union</a>, <a href="https://www.literistic.com/">Literistic</a>, <a href="http://build.pixelunion.net/pangolin/">Pangolin</a>, <a href="https://github.com/DesignerNews/pixel-picker">Pixel Picker</a>, and various other open source projects.</p>
+      </div>
+    </div>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-66342751-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </body>
+</html>
