@@ -2,116 +2,529 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Jody Heavener is trying to make good web things.">
 
     <title>Jody Heavener</title>
 
-    <link rel="shortcut icon" type="image/png" href="favicon.png" />
-    <link href="http://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic" rel="stylesheet" type="text/css">
+
+    <!--
+
+      Hey, thanks for taking an interest in my site’s code. There’s nothing paticularly special
+      about this page; it’s one page, hand-coded, embedded CSS, very little JavaScript.
+
+      Actually, maybe that makes it special? No build systems, JS frameworks, preprocessors.
+
+      I live for this kind of shit.
+
+      Anyways, this code lives at:
+      https://github.com/jodyheavener/jodys.site
+
+      ✌️
+
+    -->
+
+
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Jody Heavener">
+    <meta property="og:title" content="Jody Heavener">
+    <meta property="og:description" content="Just trying to make good web things">
+    <meta property="og:url" content="http://jodys.site">
+    <meta property="og:image" content="http://jodys.site/images/charlie.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:alt" content="Pic of Charlie">
+
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i,700|Roboto:400,500" rel="stylesheet" type="text/css">
 
     <style>
       html,
       body {
-        width: 100%;
-        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
       }
 
       body {
         margin: 0;
         padding: 0;
-        font-size: 17px;
-        font-family: 'Playfair Display', serif;
-        color: red;
+        font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 20px;
+        line-height: 28px;
+        color: #222;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
 
-      .container {
-        position: relative;
-        padding: 20px 30px;
+      #container {
+        box-shadow: inset 10px 0 0 0 #f1b951;
       }
 
-      @media (min-width: 640px) {
-        .container {
-          padding: 40px 60px;
-          top: 50%;
-          transform: translateY(-50%);
+      header,
+      main,
+      footer {
+        padding: 50px 40px 0 50px;
+      }
+
+      @media (min-width: 960px) {
+        header,
+        main,
+        footer {
+          padding: 70px 90px 0 100px;
         }
       }
 
-      #who-the-fuck-are-you {
-        font-weight: 700;
-        font-size: 50px;
+      @media (min-width: 1300px) {
+        header,
+        main,
+        footer {
+          padding: 80px 140px 0 150px;
+        }
+      }
+
+      header {
+        font-family: 'Playfair Display', Times, 'Times New Roman', serif;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      header img:hover {
+        animation: rotate 10s linear infinite;
+      }
+
+      #header-title-group {
+        margin-top: 20px;
+        max-width: 690px;
+      }
+
+      header h1,
+      header h2 {
+        display: inline;
+        font-size: 34px;
+        line-height: 40px
+      }
+
+      @media (min-width: 480px) {
+        header h1,
+        header h2 {
+          font-size: 45px;
+          line-height: 50px;
+        }
+      }
+
+      @media (min-width: 960px) {
+        header h1,
+        header h2 {
+          font-size: 60px;
+          line-height: 70px;
+        }
+      }
+
+      header h2 {
+        font-weight: 400;
+        font-style: italic;
+        margin-left: 5px;
+      }
+
+      section {
+        padding-bottom: 40px;
+        max-width: 685px;
+      }
+
+      section:last-child {
+        padding-bottom: 50px;
+      }
+
+      @media (min-width: 960px) {
+        section {
+          padding-bottom: 60px;
+        }
+
+        section:last-child {
+          padding-bottom: 80px;
+        }
+      }
+
+      @media (min-width: 1300px) {
+        section {
+          padding-bottom: 80px;
+        }
+
+        section:last-child {
+          padding-bottom: 80px;
+        }
+      }
+
+      .large {
+        max-width: 960px;
+      }
+
+      section h2 {
         margin: 0;
-        margin-bottom: 15px;
-        text-shadow: 5px 5px yellow;
+        font-size: 23px;
+        font-weight: 500;
       }
 
-      #who-do-you-think-you-are {
-        font-size: 25px;
+      @media (min-width: 480px) {
+        section h2 {
+          font-size: 25px;
+        }
       }
 
-      a {
-        position: relative;
-        color: black;
-        border-radius: 2px;
+      section h2 span {
+        margin-right: 7px;
+      }
+
+      section p:last-child,
+      section ul:last-child {
+        margin-bottom: 0;
+      }
+
+      main section p {
+        color: #4E4E4E;
+      }
+
+      main section b {
+        font-weight: 500;
+        color: #111;
+      }
+
+      section p a {
+        color: #111;
         text-decoration: none;
+        border-bottom: 2px solid;
         transition: all 0.1s ease-in;
-        border-bottom: 1px solid black;
-        white-space: nowrap;
       }
 
-      a:hover,
-      a:focus {
-        position: relative;
-        z-index: 1;
-        outline: none;
-        text-shadow: 0 0 transparent;
-        box-shadow: 0 0 0 5px greenyellow;
-        background-color: greenyellow;
-        color: black;
-        border-color: transparent;
+      section p a:hover,
+      section p a:focus {
+        color: #bd8e35;
       }
 
-      p {
-        margin: 8px 0;
-        line-height: 30px;
+      section .fancy {
+        font-family: 'Playfair Display', Times, 'Times New Roman', serif;
+        font-style: italic;
       }
 
-      .section {
-        margin: 30px 0;
-        max-width: 650px;
+      footer {
+        background-color: #333;
+        color: #fff;
+        box-shadow: inset 10px 0 0 0 #1f1f1f;
       }
 
-      #contact {
-        border-top: 1px solid #eee;
-        padding-top: 15px;
+      #jobs li:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      @media (min-width: 680px) {
+        #jobs {
+          margin-top: 30px;
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        #jobs li {
+          flex: 0 0 calc(50% - 15px);
+          margin-right: 15px;
+        }
+      }
+
+      .job {
+        display: flex;
+        align-items: center;
+        padding: 12px 14px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #363636;
+        background-color: #F5F5F5;
+        background-image: linear-gradient(-180deg, #f5f5f5 0%, #f1f1f1  50%, #e9e9e9 100%);
+        box-shadow: 0 9px 17px -12px rgba(0,0,0,0.50), 0 1px 0 0 rgba(0,0,0,0.12), inset 0 0 1px 0 rgba(0,0,0,0.15);
+        background-size: 100% 200%;
+        transition: all 0.2s ease-in, background-position 0.1s ease-in;
+      }
+
+      .job:hover,
+      .job:focus {
+        background-color: #f1f1f1;
+        background-position: 0 100%;
+        box-shadow: 0 4px 15px 0 rgba(0,0,0,0.1), 0 9px 22px -12px rgba(0,0,0,0.50), 0 1px 0 0 rgba(0,0,0,0.12), inset 0 0 2px 0 rgba(0,0,0,0.2);
+        color: #222;
+        transform: translateY(-1px);
+      }
+
+      .job:active {
+        transform: translateY(0);
+        box-shadow: 0 3px 10px 0 rgba(0,0,0,0.1), 0 8px 15px -10px rgba(0,0,0,0.50), 0 1px 0 0 rgba(0,0,0,0.12), inset 0 0 2px 0 rgba(0,0,0,0.2);
+      }
+
+      @media (min-width: 960px) {
+        .job {
+          padding: 15px 18px;
+        }
+      }
+
+      .job-image {
+        height: 40px;
+      }
+
+      .job-image img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .job-info {
+        margin-left: 14px;
+        line-height: 20px;
+        margin-bottom: -2px;
+      }
+
+      .job-title {
+        font-weight: 500;
+        display: block;
+      }
+
+      .job-poition {
+        font-size: 14px;
+        color: #4E4E4E;
+      }
+
+      mark {
+        text-transform: uppercase;
+        padding: 0 3px;
+        border-radius: 2px;
+        line-height: 16px;
+        display: inline-block;
+        margin-right: 3px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .current {
+        background-color: #f1ecf0;
+        color: #5c445a;
+      }
+
+      .personal {
+        background-color: #F7F1E7;
+        color: #5C5544;
+      }
+
+      .contract {
+        background-color: #ECF5FB;
+        color: #5E5E5F;
+      }
+
+      #jobs,
+      #socials {
+        padding: 0;
+        list-style-type: none;
+      }
+
+      #socials li {
+        display: inline-block;
+      }
+
+      #socials a {
+        margin-right: 10px;
+        opacity: 0.8;
+        transition: 0.1s ease-in;
+      }
+
+      #socials a:hover,
+      #socials a:focus {
+        opacity: 1;
       }
     </style>
   </head>
   <body>
 
-    <div class="container">
-      <h1 id="who-the-fuck-are-you">Jody Heavener</h1>
-      <p id="who-do-you-think-you-are">Trying to make good web things.</p>
+    <div id="container">
+      <header>
+        <img src="images/avatar.png" srcset="images/avatar.png 1x, images/avatar@2x.png 2x" alt="Jody’s cute face" />
+        <div id="header-title-group">
+          <h1>Jody Heavener</h1>
+          <h2 id="switch-tagline">is trying to make good web things.</h2>
+        </div>
+      </header>
 
-      <div class="section">
-        <p>Based in Victoria, Canada, I'm a software engineer at <a href="https://dribbble.com/" title="What are you working on?">Dribbble</a>.</p>
-        <p>I've also worked with <a href="https://weworkremotely.com/">We Work Remotely</a>, <a href="https://www.designernews.co/">Designer News</a>, <a href="https://www.johnnyrockets.ca/">Johnny Rockets Canada</a>, <a href="https://www.pixelunion.net/">Pixel Union</a>, and <a href="https://www.literistic.com/">Literistic</a>. Fun projects include <a href="http://usedelight.com/">Delight</a>, <a href="https://github.com/pixelunion/Pangolin">Pangolin</a>, and <a href="https://github.com/DesignerNews/pixel-picker">Pixel Picker</a>.</p>
-      </div>
+      <main>
+        <section class="large">
+          <h2><span>👨‍💻</span>Look, here’s the deal</h2>
+          <p>Victoria, Canada is my home but I’ve got a pretty sweet gig working remotely as a Product Manager at <a href="https://dribbble.com" target="_blank" rel="noopener">Dribbble</a>. The majority of my time there (and most of my career) has been spent with Ruby on Rails and front-end engineering. I’ll always be a programmer, but in the last year I’ve become fascinated with using data to inform project decisions, translating concepts and visions into sound roadmaps, and working with teams to deliver the best possible products.</p>
+          <p>I’m extremely grateful for the opportunities I’ve been given to build or contribute to digital projects that millions of people use in one way or another.</p>
+        </section>
 
-      <div class="section" id="contact">
-        <p>You'll mostly find me on <a href="https://twitter.com/jodyheavener">Twitter</a> and <a href="https://github.com/jodyheavener">Github</a>. You can also reach me over <a href="mailto:j.heavener@gmail.com">email</a>.</p>
-      </div>
+        <section>
+          <h2><span>🏆</span>Career highlights</h2>
+          <p>Here are some of the more exciting things I’ve been a part of.</p>
+          <ul id="jobs">
+            <li>
+              <a class="job" target="_blank" rel="noopener" href="https://dribbble.com">
+                <span class="job-image">
+                  <img src="images/dribbble.svg" alt="Dribbble icon" />
+                </span>
+                <span class="job-info">
+                  <span class="job-title">Dribbble</span>
+                  <span class="job-poition"><mark class="current">Current</mark>PM &amp; Engineer</span>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a class="job" target="_blank" rel="noopener" href="https://weworkremotely.com">
+                <span class="job-image">
+                  <img src="images/weworkremotely.svg" alt="We Work Remotely icon" />
+                </span>
+                <span class="job-info">
+                  <span class="job-title">We Work Remotely</span>
+                  <span class="job-poition">Engineer</span>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a class="job" target="_blank" rel="noopener" href="https://www.designernews.co">
+                <span class="job-image">
+                  <img src="images/designernews.svg" alt="Designer News icon" />
+                </span>
+                <span class="job-info">
+                  <span class="job-title">Designer News</span>
+                  <span class="job-poition">Engineer</span>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a class="job" target="_blank" rel="noopener" href="https://pixelunion.net">
+                <span class="job-image">
+                  <img src="images/pixelunion.svg" alt="Pixel Union icon" />
+                </span>
+                <span class="job-info">
+                  <span class="job-title">Pixel Union</span>
+                  <span class="job-poition">Theme Developer</span>
+                </span>
+              </a>
+            </li>
+
+            <!--<li>
+              <a class="job" target="_blank" rel="noopener" href="https://repolovers.com">
+                <span class="job-image">
+                  <img src="images/repolovers.svg" alt="Repo Lovers icon" />
+                </span>
+                <span class="job-info">
+                  <span class="job-title">Repo Lovers</span>
+                  <span class="job-poition"><mark class="personal">Personal</mark>Developer</span>
+                </span>
+              </a>
+            </li>-->
+
+            <li>
+              <a class="job" target="_blank" rel="noopener" href="http://usedelight.com">
+                <span class="job-image">
+                  <img src="images/delight.svg" alt="Delight for Chrome icon" />
+                </span>
+                <span class="job-info">
+                  <span class="job-title">Delight for Chrome</span>
+                  <span class="job-poition"><mark class="personal">Personal</mark>Developer</span>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a class="job" target="_blank" rel="noopener" href="https://www.gifycam.com">
+                <span class="job-image">
+                  <img src="images/gifycam.svg" alt="Gify Cam icon" />
+                </span>
+                <span class="job-info">
+                  <span class="job-title">Gify Cam</span>
+                  <span class="job-poition"><mark class="personal">Personal</mark>Developer</span>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a class="job" target="_blank" rel="noopener" href="https://literistic.com">
+                <span class="job-image">
+                  <img src="images/literistic.svg" alt="Literistic icon" />
+                </span>
+                <span class="job-info">
+                  <span class="job-title">Literistic</span>
+                  <span class="job-poition"><mark class="contract">Contract</mark>Developer</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2><span>💪</span>Web & tech values</h2>
+          <p>Alright, I know this is preachy, but this is my page, <i class="fancy">not yours</i>, so I wanted to outline some of my own beliefs and values as they relate to my field.</p>
+          <ol id="values-list">
+            <li><p><b>Our industry needs to be much more inclusive.</b> More womxn on engineering teams, more exposure and opportunity for underrepresented minorities, and less bullshit in general. No, seriously, stop what you’re doing and consider supporting one of these groups: <a target="_blank" rel="noopener" href="https://www.canadalearningcode.ca/">Canada Learning Code</a>, <a target="_blank" rel="noopener" href="https://girlswhocode.com/">Girls Who Code</a>, <a target="_blank" rel="noopener" href="https://womenwho.design/">Women Who Design</a>, <a target="_blank" rel="noopener" href="https://blackswho.design/">Blacks Who Design</a>, <a target="_blank" rel="noopener" href="http://www.blackgirlscode.com/">Black Girls Code</a>, <a target="_blank" rel="noopener" href="https://www.latinxswhodesign.com/">Latinxs Who Design</a>, and <a target="_blank" rel="noopener" href="https://www.latinasintech.org/">Latinas In Tech</a>. Reach out to suggest more groups I can add to this list.</p></li>
+            <li><p><b>Accessibility shouldn’t be an afterthought or luxury.</b> In this day and age there is no excuse to not make accessibility a priority in your project, and I am willing to fight you on this. Accessibility can be defined in a number of ways, but care and attention for the visually and physically diverse is incredibly important in your projects.</p></li>
+            <li><p><b>You don’t need to overdo it with web tooling.</b> I try my hardest to excersize common sense when building out web products and whether or not they need JavaScript frameworks (they probably don’t), build systems, preprocessors, etc. I <i class="fancy">love</i> the basics, and see no need to overcomplicate things. Sure, there’s definitely value in all of these tools, but my belief is that if we can get away with a simple setup there’s no need for something complex.</p></li>
+          </ol>
+        </section>
+      </main>
+
+      <footer>
+        <section>
+          <h2><span>🐶</span>Let’s connect</h2>
+          <p>I love chatting about mental health, music, and my dog.</p>
+          <ul id="socials">
+            <li>
+              <a class="social" target="_blank" rel="noopener" href="https://twitter.com/jodyheavener">
+                <img src="images/twitter.svg" alt="Follow @jodyheavener on Twitter" />
+              </a>
+            </li>
+
+            <li>
+              <a class="social" target="_blank" rel="noopener" href="https://github.com/jodyheavener">
+                <img src="images/github.svg" alt="Follow @jodyheavener on GitHub" />
+              </a>
+            </li>
+
+            <li>
+              <a class="social" target="_blank" rel="noopener" href="https://open.spotify.com/user/12143117793">
+                <img src="images/spotify.svg" alt="Follow Jody Heavener on Spotify" />
+              </a>
+            </li>
+          </ul>
+        </section>
+      </footer>
     </div>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-66342751-1', 'auto');
       ga('send', 'pageview');
+
+
+      (function() {
+        var taglines = [
+          'is not a designer, but is fascinated by design.',
+          'has a really cute bulldog.',
+          'is probably grumpy right now.',
+          'loves you.',
+          'is trying to make good web things.',
+          'doesn’t trust paper grocery bags',
+          'just wants to make beautiful web products.'
+        ]
+
+        var switcher = document.getElementById('switch-tagline')
+        switcher.textContent = taglines[Math.floor(Math.random() * taglines.length)]
+      })()
     </script>
 
   </body>
