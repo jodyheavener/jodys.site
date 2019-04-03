@@ -329,6 +329,7 @@
 
       #socials li {
         display: inline-block;
+        vertical-align: middle;
       }
 
       #socials a {
@@ -340,6 +341,21 @@
       #socials a:hover,
       #socials a:focus {
         opacity: 1;
+      }
+
+      #socials img {
+        vertical-align: bottom;
+      }
+
+      #email-link {
+        background-color: #fff;
+        display: inline-block;
+        padding: 2px 7px;
+        font-size: 18px;
+        font-weight: 500;
+        color: #333;
+        text-decoration: none;
+        border-radius: 3px;
       }
     </style>
   </head>
@@ -496,6 +512,10 @@
                 <img src="images/spotify.svg" alt="Follow Jody Heavener on Spotify" />
               </a>
             </li>
+
+            <li>
+              <a id="email-link" target="_blank" href="#" title="Send me an email. Jody, at this domain.">jody at</a>
+            </li>
           </ul>
         </section>
       </footer>
@@ -524,6 +544,16 @@
 
         var switcher = document.getElementById('switch-tagline')
         switcher.textContent = taglines[Math.floor(Math.random() * taglines.length)]
+
+        var sendEmail = function(event) {
+          event.preventDefault()
+
+          var pieces = ['jody', 'site']
+          window.open(['mailto:', pieces[0], '@', pieces[0], 's.', pieces[1]].join(''))
+        }
+
+        var emailLink = document.getElementById('email-link')
+        emailLink.addEventListener('click', sendEmail)
       })()
     </script>
 
