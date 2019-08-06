@@ -250,7 +250,7 @@
         transition: all 0.2s ease-in, background-position 0.1s ease-in;
       }
 
-      .job:hover,
+      a.job:hover,
       .job:focus {
         background-color: #f1f1f1;
         background-position: 0 100%;
@@ -259,7 +259,7 @@
         transform: translateY(-1px);
       }
 
-      .job:active {
+      a.job:active {
         transform: translateY(0);
         box-shadow: 0 3px 10px 0 rgba(0,0,0,0.1), 0 8px 15px -10px rgba(0,0,0,0.50), 0 1px 0 0 rgba(0,0,0,0.12), inset 0 0 2px 0 rgba(0,0,0,0.2);
       }
@@ -372,15 +372,26 @@
 
       <main>
         <section class="large">
-          <h2><span>👨‍💻</span>Look, here’s the deal</h2>
-          <p>Right now I'm cranking out pixels in Victoria, Canada. Most of my career has been spent with Ruby on Rails and front-end engineering. I’ll always be a programmer, but in the last year I’ve become fascinated with using data to inform project decisions, translating concepts and visions into sound roadmaps, and working with teams to deliver the best possible products.</p>
-          <p>I’m extremely grateful for the opportunities I’ve been given to build or contribute to digital projects that millions of people use in one way or another.</p>
+          <h2><span>👨‍💻</span> Here’s what’s up</h2>
+          <p>I’m currently building pixels for the web in Victoria, Canada. I’m extremely grateful for the opportunities I’ve been given to build or contribute to digital projects that millions of people use in one way or another.</p>
         </section>
 
         <section>
-          <h2><span>🏆</span>Career highlights</h2>
+          <h2><span>🙏</span> Career highlights</h2>
           <p>Here are some of the more exciting things I’ve been a part of.</p>
           <ul id="jobs">
+            <li>
+              <div class="job" title="Who knows?">
+                <span class="job-image">
+                  <img src="images/unknown.png" alt="Unknown Pokemon" />
+                </span>
+                <span class="job-info">
+                  <span class="job-title">Company Z</span>
+                  <span class="job-poition"><mark class="current">Current</mark> Engineer</span>
+                </span>
+              </div>
+            </li>
+
             <li>
               <a class="job" target="_blank" rel="noopener" href="https://dribbble.com">
                 <span class="job-image">
@@ -429,17 +440,17 @@
               </a>
             </li>
 
-            <!--<li>
+            <li>
               <a class="job" target="_blank" rel="noopener" href="https://repolovers.com">
                 <span class="job-image">
                   <img src="images/repolovers.svg" alt="Repo Lovers icon" />
                 </span>
                 <span class="job-info">
                   <span class="job-title">Repo Lovers</span>
-                  <span class="job-poition"><mark class="personal">Personal</mark>Developer</span>
+                  <span class="job-poition"><mark class="personal">Personal</mark> Developer</span>
                 </span>
               </a>
-            </li>-->
+            </li>
 
             <li>
               <a class="job" target="_blank" rel="noopener" href="http://usedelight.com">
@@ -448,19 +459,7 @@
                 </span>
                 <span class="job-info">
                   <span class="job-title">Delight for Chrome</span>
-                  <span class="job-poition"><mark class="personal">Personal</mark>Developer</span>
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://www.gifycam.com">
-                <span class="job-image">
-                  <img src="images/gifycam.svg" alt="Gify Cam icon" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Gify Cam</span>
-                  <span class="job-poition"><mark class="personal">Personal</mark>Developer</span>
+                  <span class="job-poition"><mark class="personal">Personal</mark> Developer</span>
                 </span>
               </a>
             </li>
@@ -472,28 +471,18 @@
                 </span>
                 <span class="job-info">
                   <span class="job-title">Literistic</span>
-                  <span class="job-poition"><mark class="contract">Contract</mark>Developer</span>
+                  <span class="job-poition"><mark class="contract">Contract</mark> Developer</span>
                 </span>
               </a>
             </li>
           </ul>
-        </section>
-
-        <section>
-          <h2><span>💪</span>Web & tech values</h2>
-          <p>Alright, I know this is preachy, but this is my page, <i class="fancy">not yours</i>, so I wanted to outline some of my own beliefs and values as they relate to my field.</p>
-          <ol id="values-list">
-            <li><p><b>Our industry needs to be much more inclusive.</b> More womxn on engineering teams, more exposure and opportunity for underrepresented minorities, and less bullshit in general. No, seriously, stop what you’re doing and consider supporting one of these groups: <a target="_blank" rel="noopener" href="https://www.canadalearningcode.ca/">Canada Learning Code</a>, <a target="_blank" rel="noopener" href="https://girlswhocode.com/">Girls Who Code</a>, <a target="_blank" rel="noopener" href="https://womenwho.design/">Women Who Design</a>, <a target="_blank" rel="noopener" href="https://blackswho.design/">Blacks Who Design</a>, <a target="_blank" rel="noopener" href="http://www.blackgirlscode.com/">Black Girls Code</a>, <a target="_blank" rel="noopener" href="https://www.latinxswhodesign.com/">Latinxs Who Design</a>, and <a target="_blank" rel="noopener" href="https://www.latinasintech.org/">Latinas In Tech</a>. Reach out to suggest more groups I can add to this list.</p></li>
-            <li><p><b>Accessibility shouldn’t be an afterthought or luxury.</b> In this day and age there is no excuse to not make accessibility a priority in your project, and I am willing to fight you on this. Accessibility can be defined in a number of ways, but care and attention for the visually and physically diverse is incredibly important in your projects.</p></li>
-            <li><p><b>You don’t need to overdo it with web tooling.</b> I try my hardest to excersize common sense when building out web products and whether or not they need JavaScript frameworks (they probably don’t), build systems, preprocessors, etc. I <i class="fancy">love</i> the basics, and see no need to overcomplicate things. Sure, there’s definitely value in all of these tools, but my belief is that if we can get away with a simple setup there’s no need for something complex.</p></li>
-          </ol>
         </section>
       </main>
 
       <footer>
         <section>
           <h2><span>🐶</span>Let’s connect</h2>
-          <p>I love chatting about mental health, music, and my dog.</p>
+          <p>I love chatting about mental health, accessibility, music, and my dog.</p>
           <ul id="socials">
             <li>
               <a class="social" target="_blank" rel="noopener" href="https://twitter.com/jodyheavener">
@@ -529,7 +518,6 @@
 
       ga('create', 'UA-66342751-1', 'auto');
       ga('send', 'pageview');
-
 
       (function() {
         var taglines = [
