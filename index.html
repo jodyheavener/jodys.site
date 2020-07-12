@@ -1,551 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jody Heavener is trying to make good web things.">
 
-    <title>Jody Heavener</title>
-
-
-    <!--
-
-      Hey, thanks for taking an interest in my site’s code. There’s nothing paticularly special
-      about this page; it’s one page, hand-coded, embedded CSS, very little JavaScript.
-
-      Actually, maybe that makes it special? No build systems, JS frameworks, preprocessors.
-
-      I live for this kind of shit.
-
-      Anyways, this code lives at:
-      https://github.com/jodyheavener/jodys.site
-
-      ✌️
-
-    -->
-
-
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="Jody Heavener">
-    <meta property="og:title" content="Jody Heavener">
-    <meta property="og:description" content="Just trying to make good web things">
-    <meta property="og:url" content="http://jodys.site">
-    <meta property="og:image" content="http://jodys.site/images/charlie.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:alt" content="Pic of Charlie">
-
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i,700|Roboto:400,500" rel="stylesheet" type="text/css">
-
-    <style>
-      html,
-      body {
-        min-width: 100%;
-        min-height: 100%;
-      }
-
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 20px;
-        line-height: 28px;
-        color: #222;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      #container {
-        box-shadow: inset 10px 0 0 0 #f1b951;
-      }
-
-      header,
-      main,
-      footer {
-        padding: 50px 40px 0 50px;
-      }
-
-      @media (min-width: 960px) {
-        header,
-        main,
-        footer {
-          padding: 70px 90px 0 100px;
-        }
-      }
-
-      @media (min-width: 1300px) {
-        header,
-        main,
-        footer {
-          padding: 80px 140px 0 150px;
-        }
-      }
-
-      header {
-        font-family: 'Playfair Display', Times, 'Times New Roman', serif;
-      }
-
-      @keyframes rotate {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      header img:hover {
-        animation: rotate 10s linear infinite;
-      }
-
-      #header-title-group {
-        margin-top: 20px;
-        max-width: 690px;
-      }
-
-      header h1,
-      header h2 {
-        display: inline;
-        font-size: 34px;
-        line-height: 40px
-      }
-
-      @media (min-width: 480px) {
-        header h1,
-        header h2 {
-          font-size: 45px;
-          line-height: 50px;
-        }
-      }
-
-      @media (min-width: 960px) {
-        header h1,
-        header h2 {
-          font-size: 60px;
-          line-height: 70px;
-        }
-      }
-
-      header h2 {
-        font-weight: 400;
-        font-style: italic;
-        margin-left: 5px;
-      }
-
-      section {
-        padding-bottom: 40px;
-        max-width: 685px;
-      }
-
-      section:last-child {
-        padding-bottom: 50px;
-      }
-
-      @media (min-width: 960px) {
-        section {
-          padding-bottom: 60px;
-        }
-
-        section:last-child {
-          padding-bottom: 80px;
-        }
-      }
-
-      @media (min-width: 1300px) {
-        section {
-          padding-bottom: 80px;
-        }
-
-        section:last-child {
-          padding-bottom: 80px;
-        }
-      }
-
-      .large {
-        max-width: 960px;
-      }
-
-      section h2 {
-        margin: 0;
-        font-size: 23px;
-        font-weight: 500;
-      }
-
-      @media (min-width: 480px) {
-        section h2 {
-          font-size: 25px;
-        }
-      }
-
-      section h2 span {
-        margin-right: 7px;
-      }
-
-      section p:last-child,
-      section ul:last-child {
-        margin-bottom: 0;
-      }
-
-      main section p {
-        color: #4E4E4E;
-      }
-
-      main section b {
-        font-weight: 500;
-        color: #111;
-      }
-
-      section p a {
-        color: #111;
-        text-decoration: none;
-        border-bottom: 2px solid;
-        transition: all 0.1s ease-in;
-      }
-
-      section p a:hover,
-      section p a:focus {
-        color: #bd8e35;
-      }
-
-      section .fancy {
-        font-family: 'Playfair Display', Times, 'Times New Roman', serif;
-        font-style: italic;
-      }
-
-      footer {
-        background-color: #333;
-        color: #fff;
-        box-shadow: inset 10px 0 0 0 #1f1f1f;
-      }
-
-      #jobs li:not(:last-child) {
-        margin-bottom: 15px;
-      }
-
-      @media (min-width: 680px) {
-        #jobs {
-          margin-top: 30px;
-          display: flex;
-          flex-wrap: wrap;
-        }
-
-        #jobs li {
-          flex: 0 0 calc(50% - 15px);
-          margin-right: 15px;
-        }
-      }
-
-      .job {
-        display: flex;
-        align-items: center;
-        padding: 12px 14px;
-        border-radius: 5px;
-        text-decoration: none;
-        color: #363636;
-        background-color: #F5F5F5;
-        background-image: linear-gradient(-180deg, #f5f5f5 0%, #f1f1f1  50%, #e9e9e9 100%);
-        box-shadow: 0 9px 17px -12px rgba(0,0,0,0.50), 0 1px 0 0 rgba(0,0,0,0.12), inset 0 0 1px 0 rgba(0,0,0,0.15);
-        background-size: 100% 200%;
-        transition: all 0.2s ease-in, background-position 0.1s ease-in;
-      }
-
-      a.job:hover,
-      .job:focus {
-        background-color: #f1f1f1;
-        background-position: 0 100%;
-        box-shadow: 0 4px 15px 0 rgba(0,0,0,0.1), 0 9px 22px -12px rgba(0,0,0,0.50), 0 1px 0 0 rgba(0,0,0,0.12), inset 0 0 2px 0 rgba(0,0,0,0.2);
-        color: #222;
-        transform: translateY(-1px);
-      }
-
-      a.job:active {
-        transform: translateY(0);
-        box-shadow: 0 3px 10px 0 rgba(0,0,0,0.1), 0 8px 15px -10px rgba(0,0,0,0.50), 0 1px 0 0 rgba(0,0,0,0.12), inset 0 0 2px 0 rgba(0,0,0,0.2);
-      }
-
-      @media (min-width: 960px) {
-        .job {
-          padding: 15px 18px;
-        }
-      }
-
-      .job-image {
-        height: 40px;
-      }
-
-      .job-image img {
-        width: 40px;
-        height: 40px;
-      }
-
-      .job-info {
-        margin-left: 14px;
-        line-height: 20px;
-        margin-bottom: -2px;
-      }
-
-      .job-title {
-        font-weight: 500;
-        display: block;
-      }
-
-      .job-poition {
-        font-size: 14px;
-        color: #4E4E4E;
-      }
-
-      mark {
-        text-transform: uppercase;
-        padding: 0 3px;
-        border-radius: 2px;
-        line-height: 16px;
-        display: inline-block;
-        margin-right: 3px;
-        font-size: 12px;
-        font-weight: 500;
-      }
-
-      .current {
-        background-color: #f1ecf0;
-        color: #5c445a;
-      }
-
-      .personal {
-        background-color: #F7F1E7;
-        color: #5C5544;
-      }
-
-      .contract {
-        background-color: #ECF5FB;
-        color: #5E5E5F;
-      }
-
-      #jobs,
-      #socials {
-        padding: 0;
-        list-style-type: none;
-      }
-
-      #socials li {
-        display: inline-block;
-        vertical-align: middle;
-      }
-
-      #socials a {
-        margin-right: 10px;
-        opacity: 0.8;
-        transition: 0.1s ease-in;
-      }
-
-      #socials a:hover,
-      #socials a:focus {
-        opacity: 1;
-      }
-
-      #socials img {
-        vertical-align: bottom;
-      }
-
-      #email-link {
-        background-color: #fff;
-        display: inline-block;
-        padding: 2px 7px;
-        font-size: 18px;
-        font-weight: 500;
-        color: #333;
-        text-decoration: none;
-        border-radius: 3px;
-      }
-    </style>
-  </head>
-  <body>
-
-    <div id="container">
-      <header>
-        <img src="images/avatar.png" srcset="images/avatar.png 1x, images/avatar@2x.png 2x" alt="Jody’s cute face" />
-        <div id="header-title-group">
-          <h1>Jody Heavener</h1>
-          <h2 id="switch-tagline">is trying to make good web things.</h2>
-        </div>
-      </header>
-
-      <main>
-        <section class="large">
-          <h2><span>👋</span> Hey there</h2>
-          <p>I'm a software engineer based out of Montréal. I have very little to say here. I just want to build cool things that people enjoy using, and have a positive impact with the work I do.</p>
-        </section>
-
-        <section>
-          <h2><span>😎</span> Work</h2>
-          <p>I've been extremely lucky to work with some pretty amazing people.</p>
-          <ul id="jobs">
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://www.mozilla.org">
-                <span class="job-image">
-                  <img src="images/mozilla.png" alt="Mozilla" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Mozilla</span>
-                  <span class="job-poition"><mark class="current">Current</mark></span>
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://www.liftoff.to">
-                <span class="job-image">
-                  <img src="images/liftoff.png" alt="Liftoff" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Liftoff</span>
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://dribbble.com">
-                <span class="job-image">
-                  <img src="images/dribbble.svg" alt="Dribbble icon" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Dribbble</span>
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://weworkremotely.com">
-                <span class="job-image">
-                  <img src="images/weworkremotely.svg" alt="We Work Remotely icon" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">We Work Remotely</span>
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://www.designernews.co">
-                <span class="job-image">
-                  <img src="images/designernews.svg" alt="Designer News icon" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Designer News</span>
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://pixelunion.net">
-                <span class="job-image">
-                  <img src="images/pixelunion.svg" alt="Pixel Union icon" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Pixel Union</span>
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://repolovers.com">
-                <span class="job-image">
-                  <img src="images/repolovers.svg" alt="Repo Lovers icon" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Repo Lovers</span>
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="http://usedelight.com">
-                <span class="job-image">
-                  <img src="images/delight.svg" alt="Delight for Chrome icon" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Delight for Chrome</span>
-                </span>
-              </a>
-            </li>
-
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://literistic.com">
-                <span class="job-image">
-                  <img src="images/literistic.svg" alt="Literistic icon" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Literistic</span>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </main>
-
-      <footer>
-        <section>
-          <h2><span>🐶</span>Let’s connect</h2>
-          <p>I love chatting about mental health, accessibility, music, and my dog.</p>
-          <ul id="socials">
-            <li>
-              <a class="social" target="_blank" rel="noopener" href="https://twitter.com/jodyheavener">
-                <img src="images/twitter.svg" alt="Follow @jodyheavener on Twitter" />
-              </a>
-            </li>
-
-            <li>
-              <a class="social" target="_blank" rel="noopener" href="https://github.com/jodyheavener">
-                <img src="images/github.svg" alt="Follow @jodyheavener on GitHub" />
-              </a>
-            </li>
-
-            <li>
-              <a class="social" target="_blank" rel="noopener" href="https://open.spotify.com/user/12143117793">
-                <img src="images/spotify.svg" alt="Follow Jody Heavener on Spotify" />
-              </a>
-            </li>
-
-            <li>
-              <a id="email-link" target="_blank" href="#" title="Send me an email. Jody, at this domain.">jody at</a>
-            </li>
-          </ul>
-        </section>
-      </footer>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jody Heavener is trying to make good web things.">
+
+  <title>Jody Heavener</title>
+
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.7.0/modern-normalize.min.css" />
+  <Link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="contain">
+      <h1 class="site-title">Jody Heavener</h1>
+
+      <h2 class="intro-text">
+        <span class="nb">H<span class="dot-i"><span class="dot red"></span>i</span>,</span>
+        I’m <span class="nb">Jody<span class="dot-period"><span class="dot yellow"></span>.</span></span>
+        I really <span class="nb">en<span class="dot-j"><span class="dot pink"></span>j</span>oy</span>
+        <span class="nb">bu<span class="dot-i"><span class="dot green"></span>i</span>ld<span class="dot-i"><span class="dot pink"></span>i</span>ng</span>
+        neat <span class="nb">th<span class="dot-i"><span class="dot green"></span>i</span>ngs</span> for the
+        <span class="nb"><span class="dot-i"><span class="dot red"></span>i</span>nternet<span class="dot-period"><span class="dot yellow"></span>.</span></span>
+      </h2>
     </div>
+  </header>
 
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  <main class="site-main">
+    <div class="contain">
+      <img class="about-image" src="assets/about-image.png" srcset="assets/about-image.png 1x, assets/about-image@2x.png 2x" alt="Photo of Jody Heavener" />
 
-      ga('create', 'UA-66342751-1', 'auto');
-      ga('send', 'pageview');
+      <div class="about-container">
+        <section class="about-general">
+          <h3>For a better web.</h3>
+          <p>For the better part of a decade I’ve been a software engineer, working at all levels of the stack to build apps, themes, plugins, communities, and other neat web products that people love to use. I take pride in focussing on the details to create a valuable, memorable, and accessible experience with the work I deliver.</p>
+          <p>These days I’m over at <a href="https://www.mozilla.org/" class="grad-link" target="_blank" rel="noopener">Mozilla</a> working on <a href="https://github.com/mozilla/fxa" class="grad-link" target="_blank" rel="noopener">Firefox Accounts</a>, but I love all things open source and am always looking to contribute to fun projects.</p>
+          <p>I’m based out of Montreal, Canada, and love <a class="grad-link" href="https://twitter.com/search?q=from%3Ajodyheavener%20charlie&f=live" target="_blank" rel="noopener">my dog</a>, <a class="grad-link" href="https://open.spotify.com/user/12143117793?si=IK1K00SjQO67HVUBdC2GEA">sad indie rock</a>, and occasionally <a class="grad-link" href="https://www.instagram.com/holdfastletters/">drawing pictures</a>.</p>
+        </section>
 
-      (function() {
-        var taglines = [
-          'has a really cute bulldog.',
-          'is probably grumpy right now.',
-          'loves you.',
-          'is trying to make good web things.',
-          'doesn’t trust paper grocery bags.',
-        ]
+        <section class="about-work">
+          <p>I’ve been lucky enough to work with some incredible organizations and brands:</p>
 
-        var switcher = document.getElementById('switch-tagline')
-        switcher.textContent = taglines[Math.floor(Math.random() * taglines.length)]
+          <div class="about-logo-container">
+            <a href="https://www.mozilla.org/" target="_blank" rel="noopener">
+              <img src="assets/logo-mozilla.svg" alt="Mozilla logo" />
+            </a>
 
-        var sendEmail = function(event) {
-          event.preventDefault()
+            <a href="https://dribbble.com/" target="_blank" rel="noopener">
+              <img src="assets/logo-dribbble.svg" alt="Dribbble logo" />
+            </a>
 
-          var pieces = ['jody', 'site']
-          window.open(['mailto:', pieces[0], '@', pieces[0], 's.', pieces[1]].join(''))
-        }
+            <a href="https://www.liftoff.to/" target="_blank" rel="noopener">
+              <img src="assets/logo-liftoff.svg" alt="Liftoff logo" />
+            </a>
 
-        var emailLink = document.getElementById('email-link')
-        emailLink.addEventListener('click', sendEmail)
-      })()
-    </script>
+            <a href="https://weworkremotely.com/" target="_blank" rel="noopener">
+              <img src="assets/logo-we-work-remotely.svg" alt="We Work Remotely logo" />
+            </a>
 
-  </body>
+            <a href="https://www.johnnyrockets.ca/" class="work-jr" target="_blank" rel="noopener">
+              <img src="assets/logo-johnny-rockets.svg" alt="Johnny Rockets logo" />
+            </a>
+
+            <a href="https://www.designernews.co/" class="work-dn" target="_blank" rel="noopener">
+              <img src="assets/logo-designer-news.svg" alt="Designer News logo" />
+            </a>
+
+            <a href="https://pixelunion.net/" class="work-pxu" target="_blank" rel="noopener">
+              <img src="assets/logo-pixel-union.svg" alt="Pixel Union logo" />
+            </a>
+
+            <a href="https://interfacelovers.com/" target="_blank" rel="noopener">
+              <img src="assets/logo-interface-lovers.svg" alt="Interface Lovers logo" />
+            </a>
+
+            <a href="https://www.literistic.com/" target="_blank" rel="noopener">
+              <img src="assets/logo-literistic.svg" alt="Literistic logo" />
+            </a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
