@@ -1,551 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jody Heavener is trying to make good web things.">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jody Heavener is trying to make good web things."
+    />
 
     <title>Jody Heavener</title>
 
-
-    <!--
-
-      Hey, thanks for taking an interest in my site’s code. There’s nothing paticularly special
-      about this page; it’s one page, hand-coded, embedded CSS, very little JavaScript.
-
-      Actually, maybe that makes it special? No build systems, JS frameworks, preprocessors.
-
-      I live for this kind of shit.
-
-      Anyways, this code lives at:
-      https://github.com/jodyheavener/jodys.site
-
-      ✌️
-
-    -->
-
-
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="Jody Heavener">
-    <meta property="og:title" content="Jody Heavener">
-    <meta property="og:description" content="Just trying to make good web things">
-    <meta property="og:url" content="http://jodys.site">
-    <meta property="og:image" content="http://jodys.site/images/charlie.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:alt" content="Pic of Charlie">
+    <meta property="og:site_name" content="Jody Heavener" />
+    <meta property="og:title" content="Jody Heavener" />
+    <meta
+      property="og:description"
+      content="Just trying to make good web things."
+    />
+    <meta property="og:url" content="http://jodys.site" />
+    <meta property="og:image" content="http://jodys.site/assets/card.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@jodyheavener" />
+    <meta name="twitter:creator" content="@jodyheavener" />
+    <meta name="twitter:url" content="http://jodys.site" />
+    <meta name="twitter:title" content="Jody Heavener" />
+    <meta
+      name="twitter:description"
+      content="Just trying to make good web things."
+    />
+    <meta name="twitter:image" content="http://jodys.site/assets/card.jpg" />
+    <meta name="twitter:image:alt" content="Jody Heavener's website logo" />
 
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i,700|Roboto:400,500" rel="stylesheet" type="text/css">
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="assets/favicon-light.png"
+      class="site-favicon"
+    />
+    <link href="site.css" rel="stylesheet" type="text/css" />
 
     <style>
-      html,
-      body {
-        min-width: 100%;
-        min-height: 100%;
+      /* Only JS should be able to disable this class */
+      .writing-hidden {
+        display: none;
       }
 
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-size: 20px;
-        line-height: 28px;
-        color: #222;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      #container {
-        box-shadow: inset 10px 0 0 0 #f1b951;
-      }
-
-      header,
-      main,
-      footer {
-        padding: 50px 40px 0 50px;
-      }
-
-      @media (min-width: 960px) {
-        header,
-        main,
-        footer {
-          padding: 70px 90px 0 100px;
-        }
-      }
-
-      @media (min-width: 1300px) {
-        header,
-        main,
-        footer {
-          padding: 80px 140px 0 150px;
-        }
-      }
-
-      header {
-        font-family: 'Playfair Display', Times, 'Times New Roman', serif;
-      }
-
-      @keyframes rotate {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-
-      header img:hover {
-        animation: rotate 10s linear infinite;
-      }
-
-      #header-title-group {
-        margin-top: 20px;
-        max-width: 690px;
-      }
-
-      header h1,
-      header h2 {
-        display: inline;
-        font-size: 34px;
-        line-height: 40px
-      }
-
-      @media (min-width: 480px) {
-        header h1,
-        header h2 {
-          font-size: 45px;
-          line-height: 50px;
-        }
-      }
-
-      @media (min-width: 960px) {
-        header h1,
-        header h2 {
-          font-size: 60px;
-          line-height: 70px;
-        }
-      }
-
-      header h2 {
-        font-weight: 400;
-        font-style: italic;
-        margin-left: 5px;
-      }
-
-      section {
-        padding-bottom: 40px;
-        max-width: 685px;
-      }
-
-      section:last-child {
-        padding-bottom: 50px;
-      }
-
-      @media (min-width: 960px) {
-        section {
-          padding-bottom: 60px;
-        }
-
-        section:last-child {
-          padding-bottom: 80px;
-        }
-      }
-
-      @media (min-width: 1300px) {
-        section {
-          padding-bottom: 80px;
-        }
-
-        section:last-child {
-          padding-bottom: 80px;
-        }
-      }
-
-      .large {
-        max-width: 960px;
-      }
-
-      section h2 {
-        margin: 0;
-        font-size: 23px;
-        font-weight: 500;
-      }
-
-      @media (min-width: 480px) {
-        section h2 {
-          font-size: 25px;
-        }
-      }
-
-      section h2 span {
-        margin-right: 7px;
-      }
-
-      section p:last-child,
-      section ul:last-child {
-        margin-bottom: 0;
-      }
-
-      main section p {
-        color: #4E4E4E;
-      }
-
-      main section b {
-        font-weight: 500;
-        color: #111;
-      }
-
-      section p a {
-        color: #111;
-        text-decoration: none;
-        border-bottom: 2px solid;
-        transition: all 0.1s ease-in;
-      }
-
-      section p a:hover,
-      section p a:focus {
-        color: #bd8e35;
-      }
-
-      section .fancy {
-        font-family: 'Playfair Display', Times, 'Times New Roman', serif;
-        font-style: italic;
-      }
-
-      footer {
-        background-color: #333;
-        color: #fff;
-        box-shadow: inset 10px 0 0 0 #1f1f1f;
-      }
-
-      #jobs li:not(:last-child) {
-        margin-bottom: 15px;
-      }
-
-      @media (min-width: 680px) {
-        #jobs {
-          margin-top: 30px;
-          display: flex;
-          flex-wrap: wrap;
-        }
-
-        #jobs li {
-          flex: 0 0 calc(50% - 15px);
-          margin-right: 15px;
-        }
-      }
-
-      .job {
-        display: flex;
-        align-items: center;
-        padding: 12px 14px;
-        border-radius: 5px;
-        text-decoration: none;
-        color: #363636;
-        background-color: #F5F5F5;
-        background-image: linear-gradient(-180deg, #f5f5f5 0%, #f1f1f1  50%, #e9e9e9 100%);
-        box-shadow: 0 9px 17px -12px rgba(0,0,0,0.50), 0 1px 0 0 rgba(0,0,0,0.12), inset 0 0 1px 0 rgba(0,0,0,0.15);
-        background-size: 100% 200%;
-        transition: all 0.2s ease-in, background-position 0.1s ease-in;
-      }
-
-      a.job:hover,
-      .job:focus {
-        background-color: #f1f1f1;
-        background-position: 0 100%;
-        box-shadow: 0 4px 15px 0 rgba(0,0,0,0.1), 0 9px 22px -12px rgba(0,0,0,0.50), 0 1px 0 0 rgba(0,0,0,0.12), inset 0 0 2px 0 rgba(0,0,0,0.2);
-        color: #222;
-        transform: translateY(-1px);
-      }
-
-      a.job:active {
-        transform: translateY(0);
-        box-shadow: 0 3px 10px 0 rgba(0,0,0,0.1), 0 8px 15px -10px rgba(0,0,0,0.50), 0 1px 0 0 rgba(0,0,0,0.12), inset 0 0 2px 0 rgba(0,0,0,0.2);
-      }
-
-      @media (min-width: 960px) {
-        .job {
-          padding: 15px 18px;
-        }
-      }
-
-      .job-image {
-        height: 40px;
-      }
-
-      .job-image img {
-        width: 40px;
-        height: 40px;
-      }
-
-      .job-info {
-        margin-left: 14px;
-        line-height: 20px;
-        margin-bottom: -2px;
-      }
-
-      .job-title {
-        font-weight: 500;
-        display: block;
-      }
-
-      .job-poition {
-        font-size: 14px;
-        color: #4E4E4E;
-      }
-
-      mark {
-        text-transform: uppercase;
-        padding: 0 3px;
-        border-radius: 2px;
-        line-height: 16px;
-        display: inline-block;
-        margin-right: 3px;
-        font-size: 12px;
-        font-weight: 500;
-      }
-
-      .current {
-        background-color: #f1ecf0;
-        color: #5c445a;
-      }
-
-      .personal {
-        background-color: #F7F1E7;
-        color: #5C5544;
-      }
-
-      .contract {
-        background-color: #ECF5FB;
-        color: #5E5E5F;
-      }
-
-      #jobs,
-      #socials {
-        padding: 0;
-        list-style-type: none;
-      }
-
-      #socials li {
-        display: inline-block;
-        vertical-align: middle;
-      }
-
-      #socials a {
-        margin-right: 10px;
-        opacity: 0.8;
-        transition: 0.1s ease-in;
-      }
-
-      #socials a:hover,
-      #socials a:focus {
-        opacity: 1;
-      }
-
-      #socials img {
-        vertical-align: bottom;
-      }
-
-      #email-link {
-        background-color: #fff;
-        display: inline-block;
-        padding: 2px 7px;
-        font-size: 18px;
-        font-weight: 500;
-        color: #333;
-        text-decoration: none;
-        border-radius: 3px;
+      .loading-hidden {
+        visibility: hidden;
+        opacity: 0;
       }
     </style>
+
+    <noscript>
+      <style>
+        /* Fail safe in case the user has JS turned off */
+        .loading-hidden {
+          visibility: visible;
+          opacity: 1;
+        }
+      </style>
+    </noscript>
   </head>
   <body>
+    <header class="wrap">
+      <nav class="header-nav loadable-item loading-hidden">
+        <a href="/" class="logo header-logo hidden-medium"></a>
 
-    <div id="container">
-      <header>
-        <img src="images/avatar.png" srcset="images/avatar.png 1x, images/avatar@2x.png 2x" alt="Jody’s cute face" />
-        <div id="header-title-group">
-          <h1>Jody Heavener</h1>
-          <h2 id="switch-tagline">is trying to make good web things.</h2>
+        <div class="nav-links">
+          <div>
+            <span class="sr-only">Main navigation</span>
+            <ul class="list-reset list-inline nav-main-links">
+              <li>
+                <a
+                  href="/"
+                  class="logo header-logo header-desktop-logo visible-medium"
+                  ><span class="sr-only">Home</span></a
+                >
+              </li>
+              <li>
+                <a href="#writing" class="main-link writing-hidden nav-writing"
+                  >Writing</a
+                >
+              </li>
+              <li>
+                <a href="#projects" class="main-link">Projects</a>
+              </li>
+              <li>
+                <a href="#contact" class="main-link">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <span class="sr-only">Social media links</span>
+            <ul class="list-reset list-inline">
+              <li>
+                <a
+                  href="https://twitter.com/jodyheavener"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-icon social-twitter"
+                  ><span class="sr-only">Twitter</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://dev.to/jody"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-icon social-dev"
+                  ><span class="sr-only">Dev</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/jodyheavener"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="social-icon social-github"
+                  ><span class="sr-only">GitHub</span></a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-      </header>
+      </nav>
 
-      <main>
-        <section class="large">
-          <h2><span>👋</span> Hey there</h2>
-          <p>I'm a software engineer based out of Montréal. I have very little to say here. I just want to build cool things that people enjoy using, and have a positive impact with the work I do.</p>
-        </section>
+      <h1 class="intro-title max-text loadable-item loading-hidden load-first">
+        Jody Heavener is trying to make good web things.
+      </h1>
 
-        <section>
-          <h2><span>😎</span> Work</h2>
-          <p>I've been extremely lucky to work with some pretty amazing people.</p>
-          <ul id="jobs">
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://www.mozilla.org">
-                <span class="job-image">
-                  <img src="images/mozilla.png" alt="Mozilla" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Mozilla</span>
-                  <span class="job-poition"><mark class="current">Current</mark></span>
-                </span>
-              </a>
-            </li>
+      <div class="intro-text loadable-item loading-hidden">
+        <p class="max-text">
+          I’m a Canadian software engineer with a passion for front-end and user
+          experience. I want to build cool things that people enjoy using, and
+          have a positive impact with the work that I do.
+        </p>
+        <p class="max-text">
+          These days I’m at
+          <a
+            href="https://mozilla.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Mozilla</a
+          >
+          working on Firefox Accounts and other neat projects.
+        </p>
+      </div>
+    </header>
 
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://www.liftoff.to">
-                <span class="job-image">
-                  <img src="images/liftoff.png" alt="Liftoff" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Liftoff</span>
-                </span>
-              </a>
-            </li>
+    <hr
+      class="content-divider wrap header-divider loadable-item loading-hidden"
+    />
 
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://dribbble.com">
-                <span class="job-image">
-                  <img src="images/dribbble.svg" alt="Dribbble icon" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Dribbble</span>
-                </span>
-              </a>
-            </li>
+    <main class="loadable-item loading-hidden">
+      <section id="writing" class="wrap page-section writing-hidden">
+        <h2 class="section-title">Recent Writing</h2>
 
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://weworkremotely.com">
-                <span class="job-image">
-                  <img src="images/weworkremotely.svg" alt="We Work Remotely icon" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">We Work Remotely</span>
-                </span>
-              </a>
-            </li>
+        <div class="writing-content"></div>
 
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://www.designernews.co">
-                <span class="job-image">
-                  <img src="images/designernews.svg" alt="Designer News icon" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Designer News</span>
-                </span>
-              </a>
-            </li>
+        <template id="writing-item-template">
+          <article class="max-text content-item writing-item">
+            <h3></h3>
+            <p class="writing-body"></p>
+            <p>
+              <time></time>
+              <a target="_blank" rel="noopener noreferrer" class="read-more"
+                >Read more</a
+              >
+            </p>
+          </article>
+        </template>
+      </section>
 
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://pixelunion.net">
-                <span class="job-image">
-                  <img src="images/pixelunion.svg" alt="Pixel Union icon" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Pixel Union</span>
-                </span>
-              </a>
-            </li>
+      <section id="projects" class="wrap page-section">
+        <h2 class="section-title">Code Noodling</h2>
 
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://repolovers.com">
-                <span class="job-image">
-                  <img src="images/repolovers.svg" alt="Repo Lovers icon" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Repo Lovers</span>
-                </span>
-              </a>
-            </li>
+        <ul class="list-reset project-items">
+          <li class="content-item">
+            <div class="project-main project-vscode">
+              <h3>CircleCI for VS Code</h3>
+              <p>
+                A simple extension for VS Code to allow you to monitor, manage,
+                and inspect your Pipelines on CircleCI.
+              </p>
+            </div>
+            <div>
+              <a
+                href="https://marketplace.visualstudio.com/items?itemName=jodyh.circleci-vscode"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="read-more"
+                >Get it</a
+              >
+            </div>
+          </li>
 
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="http://usedelight.com">
-                <span class="job-image">
-                  <img src="images/delight.svg" alt="Delight for Chrome icon" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Delight for Chrome</span>
-                </span>
-              </a>
-            </li>
+          <li class="content-item">
+            <div class="project-main project-bonusly">
+              <h3>Bonusly GitHub Action</h3>
+              <p>Award Bonusly points for successful Pull Request merges.</p>
+            </div>
+            <div>
+              <a
+                href="https://github.com/marketplace/actions/bonusly-for-github"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="read-more"
+                >Get it</a
+              >
+            </div>
+          </li>
 
-            <li>
-              <a class="job" target="_blank" rel="noopener" href="https://literistic.com">
-                <span class="job-image">
-                  <img src="images/literistic.svg" alt="Literistic icon" />
-                </span>
-                <span class="job-info">
-                  <span class="job-title">Literistic</span>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </section>
-      </main>
+          <li class="content-item">
+            <div class="project-main project-sketch">
+              <h3>Dribbble for Sketch</h3>
+              <p>The official Dribbble plugin for Sketch.</p>
+            </div>
+            <div>
+              <a
+                href="https://github.com/dribbble/dribbble-sketch"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="read-more"
+                >Get it</a
+              >
+            </div>
+          </li>
 
-      <footer>
-        <section>
-          <h2><span>🐶</span>Let’s connect</h2>
-          <p>I love chatting about mental health, accessibility, music, and my dog.</p>
-          <ul id="socials">
-            <li>
-              <a class="social" target="_blank" rel="noopener" href="https://twitter.com/jodyheavener">
-                <img src="images/twitter.svg" alt="Follow @jodyheavener on Twitter" />
-              </a>
-            </li>
+          <li class="content-item">
+            <div class="project-main project-xd">
+              <h3>Dribbble for Adobe XD</h3>
+              <p>The official Dribbble plugin for Adobe XD.</p>
+            </div>
+            <div>
+              <a
+                href="https://github.com/dribbble/dribbble-xd"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="read-more"
+                >Get it</a
+              >
+            </div>
+          </li>
 
-            <li>
-              <a class="social" target="_blank" rel="noopener" href="https://github.com/jodyheavener">
-                <img src="images/github.svg" alt="Follow @jodyheavener on GitHub" />
-              </a>
-            </li>
+          <li class="content-item">
+            <div class="project-main project-github">
+              <h3>PM2 DevTools</h3>
+              <p>
+                A browser developer tools extension for monitoring PM2 events.
+              </p>
+            </div>
+            <div>
+              <a
+                href="https://github.com/jodyheavener/pm2-devtools"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="read-more"
+                >Get it</a
+              >
+            </div>
+          </li>
 
-            <li>
-              <a class="social" target="_blank" rel="noopener" href="https://open.spotify.com/user/12143117793">
-                <img src="images/spotify.svg" alt="Follow Jody Heavener on Spotify" />
-              </a>
-            </li>
+          <li class="content-item">
+            <div class="project-main project-github">
+              <h3>Code Copilot</h3>
+              <p>A GitHub App to prepare your PRs for a smooth landing.</p>
+            </div>
+            <div>
+              <a
+                href="https://github.com/apps/code-copilot"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="read-more"
+                >Get it</a
+              >
+            </div>
+          </li>
 
-            <li>
-              <a id="email-link" target="_blank" href="#" title="Send me an email. Jody, at this domain.">jody at</a>
-            </li>
-          </ul>
-        </section>
-      </footer>
-    </div>
+          <li class="content-item">
+            <div class="project-main project-npm">
+              <h3>CircleCI JS Client</h3>
+              <p>A JavaScript client for CircleCI’s v2 API.</p>
+            </div>
+            <div>
+              <a
+                href="https://www.npmjs.com/package/circle-client"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="read-more"
+                >Get it</a
+              >
+            </div>
+          </li>
+        </ul>
+      </section>
 
+      <section id="contact" class="wrap page-section">
+        <h2 class="section-title">Let’s Chat</h2>
+
+        <div class="max-text contact-content">
+          <p>
+            Talk to me about dogs, music (I’m learning piano!), Letterkenny, and
+            tech. You can find me on any of the platforms listed above, or you
+            can reach me by email:
+          </p>
+
+          <p><a href="mailto:jody@jodys.site">jody@jodys.site</a></p>
+        </div>
+      </section>
+    </main>
+
+    <hr class="content-divider wrap loadable-item loading-hidden" />
+
+    <footer class="wrap page-footer loadable-item loading-hidden">
+      <div class="junk-drawer">
+        <div class="logo footer-logo visible-medium"></div>
+
+        <p>
+          Thanks for visiting.
+          <span class="copyright">© 2020 Jody Heavener</span>
+        </p>
+      </div>
+
+      <div>
+        <p class="ingredients">
+          <small>
+            This website was lovingly hand-crafted in Montreal using only the
+            finest frontend languages, and without added frameworks,
+            transpilers, or third-party libraries. Your visit today was not
+            tracked in any way.
+          </small>
+        </p>
+      </div>
+    </footer>
+
+    <script src="site.js"></script>
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-66342751-1', 'auto');
-      ga('send', 'pageview');
-
-      (function() {
-        var taglines = [
-          'has a really cute bulldog.',
-          'is probably grumpy right now.',
-          'loves you.',
-          'is trying to make good web things.',
-          'doesn’t trust paper grocery bags.',
-        ]
-
-        var switcher = document.getElementById('switch-tagline')
-        switcher.textContent = taglines[Math.floor(Math.random() * taglines.length)]
-
-        var sendEmail = function(event) {
-          event.preventDefault()
-
-          var pieces = ['jody', 'site']
-          window.open(['mailto:', pieces[0], '@', pieces[0], 's.', pieces[1]].join(''))
-        }
-
-        var emailLink = document.getElementById('email-link')
-        emailLink.addEventListener('click', sendEmail)
-      })()
+      // Fail safe in case the JS file doesn't load
+      setTimeout(() => {
+        document.querySelectorAll(".loading-hidden").forEach((el) => {
+          el.classList.remove("loading-hidden");
+        });
+      }, 1000);
     </script>
-
   </body>
 </html>
