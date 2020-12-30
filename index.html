@@ -63,8 +63,8 @@
     </noscript>
   </head>
   <body>
-    <header class="wrap">
-      <nav class="header-nav loadable-item loading-hidden">
+    <nav class="wrap header-nav">
+      <div class="header-nav-inner loadable-item loading-hidden">
         <a href="/" class="logo header-logo hidden-medium"></a>
 
         <div class="nav-links">
@@ -79,15 +79,17 @@
                 >
               </li>
               <li>
-                <a href="#writing" class="main-link writing-hidden nav-writing"
+                <a
+                  href="#writing"
+                  class="main-link writing-hidden nav-writing underlineable"
                   >Writing</a
                 >
               </li>
               <li>
-                <a href="#projects" class="main-link">Projects</a>
+                <a href="#projects" class="main-link underlineable">Projects</a>
               </li>
               <li>
-                <a href="#contact" class="main-link">Contact</a>
+                <a href="#contact" class="main-link underlineable">Contact</a>
               </li>
             </ul>
           </div>
@@ -125,37 +127,46 @@
             </ul>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
 
-      <h1 class="intro-title max-text loadable-item loading-hidden load-first">
-        Jody Heavener is trying to make good web things.
-      </h1>
+    <header class="wrap">
+      <div class="loadable-item loading-hidden load-first">
+        <h1 class="intro-title max-text">
+          Jody Heavener is trying to make good web things.
+        </h1>
+      </div>
 
-      <div class="intro-text loadable-item loading-hidden">
-        <p class="max-text">
-          I’m a Canadian software engineer with a passion for front-end and user
-          experience. I want to build cool things that people enjoy using, and
-          have a positive impact with the work that I do.
-        </p>
-        <p class="max-text">
-          These days I’m at
-          <a
-            href="https://mozilla.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Mozilla</a
-          >
-          working on Firefox Accounts and other neat projects.
-        </p>
+      <div class="loadable-item loading-hidden">
+        <div class="intro-text">
+          <p class="max-text">
+            I’m a Canadian software engineer with a passion for front-end and
+            user experience. I want to build cool things that people enjoy
+            using, and have a positive impact with the work that I do.
+          </p>
+          <p class="max-text">
+            These days I'm happily working on Firefox Accounts, as well as other
+            neat projects, over at
+            <a
+              href="https://mozilla.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="underlineable"
+              >Mozilla</a
+            >.
+          </p>
+        </div>
       </div>
     </header>
 
-    <hr
-      class="content-divider wrap header-divider loadable-item loading-hidden"
-    />
+    <div class="loadable-item loading-hidden">
+      <hr class="content-divider wrap header-divider" />
+    </div>
 
     <main class="loadable-item loading-hidden">
-      <section id="writing" class="wrap page-section writing-hidden">
+      <section class="wrap page-section writing-hidden">
+        <span id="writing" class="nav-anchor"></span>
+
         <h2 class="section-title">Recent Writing</h2>
 
         <div class="writing-content"></div>
@@ -166,7 +177,10 @@
             <p class="writing-body"></p>
             <p>
               <time></time>
-              <a target="_blank" rel="noopener noreferrer" class="read-more"
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                class="read-more underlineable"
                 >Read more</a
               >
             </p>
@@ -174,7 +188,9 @@
         </template>
       </section>
 
-      <section id="projects" class="wrap page-section">
+      <section class="wrap page-section">
+        <span id="projects" class="nav-anchor"></span>
+
         <h2 class="section-title">Code Noodling</h2>
 
         <ul class="list-reset project-items">
@@ -191,7 +207,7 @@
                 href="https://marketplace.visualstudio.com/items?itemName=jodyh.circleci-vscode"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="read-more"
+                class="read-more underlineable"
                 >Get it</a
               >
             </div>
@@ -207,7 +223,7 @@
                 href="https://github.com/marketplace/actions/bonusly-for-github"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="read-more"
+                class="read-more underlineable"
                 >Get it</a
               >
             </div>
@@ -223,7 +239,7 @@
                 href="https://github.com/dribbble/dribbble-sketch"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="read-more"
+                class="read-more underlineable"
                 >Get it</a
               >
             </div>
@@ -239,14 +255,14 @@
                 href="https://github.com/dribbble/dribbble-xd"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="read-more"
+                class="read-more underlineable"
                 >Get it</a
               >
             </div>
           </li>
 
           <li class="content-item">
-            <div class="project-main project-github">
+            <div class="project-main project-devtools">
               <h3>PM2 DevTools</h3>
               <p>
                 A browser developer tools extension for monitoring PM2 events.
@@ -257,7 +273,7 @@
                 href="https://github.com/jodyheavener/pm2-devtools"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="read-more"
+                class="read-more underlineable"
                 >Get it</a
               >
             </div>
@@ -273,7 +289,7 @@
                 href="https://github.com/apps/code-copilot"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="read-more"
+                class="read-more underlineable"
                 >Get it</a
               >
             </div>
@@ -289,7 +305,7 @@
                 href="https://www.npmjs.com/package/circle-client"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="read-more"
+                class="read-more underlineable"
                 >Get it</a
               >
             </div>
@@ -297,7 +313,9 @@
         </ul>
       </section>
 
-      <section id="contact" class="wrap page-section">
+      <section class="wrap page-section">
+        <span id="contact" class="nav-anchor"></span>
+
         <h2 class="section-title">Let’s Chat</h2>
 
         <div class="max-text contact-content">
@@ -307,12 +325,18 @@
             can reach me by email:
           </p>
 
-          <p><a href="mailto:jody@jodys.site">jody@jodys.site</a></p>
+          <p>
+            <a href="mailto:jody@jodys.site" class="underlineable"
+              >jody@jodys.site</a
+            >
+          </p>
         </div>
       </section>
     </main>
 
-    <hr class="content-divider wrap loadable-item loading-hidden" />
+    <div class="loadable-item loading-hidden">
+      <hr class="content-divider wrap" />
+    </div>
 
     <footer class="wrap page-footer loadable-item loading-hidden">
       <div class="junk-drawer">
@@ -340,8 +364,8 @@
     <script>
       // Fail safe in case the JS file doesn't load
       setTimeout(() => {
-        document.querySelectorAll(".loading-hidden").forEach((el) => {
-          el.classList.remove("loading-hidden");
+        document.querySelectorAll('.loading-hidden').forEach((el) => {
+          el.classList.remove('loading-hidden');
         });
       }, 1000);
     </script>
