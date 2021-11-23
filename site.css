@@ -133,7 +133,7 @@ body {
 }
 
 .max-text {
-  max-width: 872px;
+  max-width: 800px;
 }
 
 .list-reset {
@@ -193,9 +193,9 @@ body {
 .content-divider {
   border: none;
   background: var(--text-secondary-color);
-  height: 4px;
+  height: 1px;
   border-radius: 4px;
-  opacity: 0.3;
+  opacity: 0.2;
   box-sizing: border-box;
   margin-top: 24px;
   margin-bottom: 24px;
@@ -261,13 +261,19 @@ body {
   height: 16px;
   display: inline-block;
   opacity: 0.7;
-  margin-right: 8px;
+  margin-right: 14px;
   transition: all 0.15s ease-in;
+  /* TODO: just use larger icons */
+  transform: scale(1.4);
 }
 
 .social-icon:hover,
 .social-icon:focus {
   opacity: 1;
+}
+
+.social-icon:focus {
+  outline: dotted;
 }
 
 .social-twitter {
@@ -295,7 +301,7 @@ body {
 
 .intro-text {
   font-size: 20px;
-  line-height: 28px;
+  line-height: 34px;
 }
 
 .intro-text a {
@@ -349,7 +355,7 @@ body {
 
   .social-icon {
     margin-right: 0;
-    margin-left: 24px;
+    margin-left: 28px;
     margin-top: 5px;
   }
 

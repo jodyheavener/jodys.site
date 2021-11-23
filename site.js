@@ -13,6 +13,7 @@ class Site {
     this.headerNav = document.querySelector('.header-nav');
 
     this.prefersDarkMode() && this.setFavicon('dark');
+    this.copyrightYear();
 
     window.matchMedia('(prefers-color-scheme: dark)').addListener(() => {
       this.setFavicon(this.prefersDarkMode() ? 'dark' : 'light');
@@ -51,6 +52,10 @@ class Site {
       window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
     );
+  }
+
+  copyrightYear() {
+    document.querySelector('.copyright span').textContent = new Date().getFullYear();
   }
 
   async setupWriting() {
